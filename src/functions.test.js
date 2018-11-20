@@ -187,6 +187,13 @@
 
 import test from 'ava'
 
+const ensureDefined = (t, method) => {
+  if (eval(`typeof ${method}`) !== 'function') {
+    t.fail(`\n\n\n\n\n⚡️⚡️⚡️⚡️⚡️ The next step is to define the function ${method} ⚡️⚡️⚡️⚡️⚡️\n\n\n`)
+  }
+}
+
+test('Function Check', t => ensureDefined(t, 'yelling'))
 test('yelling()', t => {
   t.deepEqual(yelling(['now', 'is', 'the', 'time']), [
     'NOW',
@@ -196,10 +203,12 @@ test('yelling()', t => {
   ])
 })
 
+test('Function Check', t => ensureDefined(t, 'doubleTrouble'))
 test('doubleTrouble()', t => {
   t.deepEqual(doubleTrouble([2, 3, 9, 0, -5]), [4, 6, 18, 0, -10])
 })
 
+test('Function Check', t => ensureDefined(t, 'stringyIndexes'))
 test('stringyIndexes', t => {
   t.deepEqual(stringyIndexes(['how', 'now', 'brown', 'cow']), [
     'how is at index 0',
@@ -209,6 +218,7 @@ test('stringyIndexes', t => {
   ])
 })
 
+test('Function Check', t => ensureDefined(t, 'onlyTheEvenSurvive'))
 test('onlyTheEvenSurvive', t => {
   t.deepEqual(onlyTheEvenSurvive([42, 50, 100, 5, -43, 17, 44]), [
     42,
@@ -218,6 +228,7 @@ test('onlyTheEvenSurvive', t => {
   ])
 })
 
+test('Function Check', t => ensureDefined(t, 'onlyTheEvenIndexedSurvive'))
 test('onlyTheEvenIndexedSurvive', t => {
   t.deepEqual(
     onlyTheEvenIndexedSurvive([
@@ -289,6 +300,7 @@ test('onlyTheEvenIndexedSurvive', t => {
   )
 })
 
+test('Function Check', t => ensureDefined(t, 'bestMoviesOfTheYear'))
 test('bestMoviesOfTheYear', t => {
   const movies = [
     { name: 'The Grand Budapest Hotel', year: 2014, score: 91 },
@@ -311,11 +323,13 @@ test('bestMoviesOfTheYear', t => {
   t.deepEqual(bestMoviesOfTheYear(movies, 2001), [])
 })
 
+test('Function Check', t => ensureDefined(t, 'everyoneIsOdd'))
 test('everyoneIsOdd', t => {
   t.is(everyoneIsOdd([9, 15, 27, 101, 33]), true)
   t.is(everyoneIsOdd([9, 23, 3, 4, 77]), false)
 })
 
+test('Function Check', t => ensureDefined(t, 'findTheNeedle'))
 test('findTheNeedle', t => {
   t.is(
     findTheNeedle(['one', 'time', 'there was a needle at', 'the market']),
@@ -323,6 +337,7 @@ test('findTheNeedle', t => {
   )
 })
 
+test('Function Check', t => ensureDefined(t, 'findTheNeedleIndex'))
 test('findTheNeedleIndex', t => {
   t.is(
     findTheNeedleIndex(['one', 'time', 'there was a needle at', 'the market']),
@@ -330,11 +345,13 @@ test('findTheNeedleIndex', t => {
   )
 })
 
+test('Function Check', t => ensureDefined(t, 'someoneToLove'))
 test('someoneToLove()', t => {
   t.is(someoneToLove(['how', 'now', 'brown', 'cow']), false)
   t.is(someoneToLove(['how', 'now', 'blue', 'cow']), true)
 })
 
+test('Function Check', t => ensureDefined(t, 'mapYourself'))
 test('mapYourself()', t => {
   const originalMap = Array.prototype.map
 
@@ -346,6 +363,7 @@ test('mapYourself()', t => {
   Array.prototype.map = originalMap
 })
 
+test('Function Check', t => ensureDefined(t, 'filterYourself'))
 test('filterYourself()', t => {
   const original = Array.prototype.filter
 
@@ -356,6 +374,7 @@ test('filterYourself()', t => {
   Array.prototype.filter = original
 })
 
+test('Function Check', t => ensureDefined(t, 'everyYourself'))
 test('everyYourself()', t => {
   const original = Array.prototype.every
 
