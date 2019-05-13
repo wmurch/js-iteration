@@ -62,9 +62,14 @@
  *    // your code here
  * }
  */
-
-// ...
-
+const yellWords = ['now', 'is', 'the', 'time']
+const yelling = yellWords => {
+  for (let i = 0; i < yellWords.length; i++) {
+    // const element = array[index];
+    yellWords[i] = yellWords[i].toUpperCase()
+  }
+  return yellWords
+}
 /**
  *
  * Define a function named `doubleTrouble` that takes an array of
@@ -72,7 +77,13 @@
  * the numbers multiplied by 2
  */
 
-// ...
+const numbers = [2, 5, 14, 67]
+const doubleTrouble = numbers => {
+  for (let i = 0; i < numbers.length; i++) {
+    numbers[i] = numbers[i] * 2
+  }
+  return numbers
+}
 
 /*
  * Define a function stringyIndexes() that takes an array of
@@ -80,21 +91,37 @@
  * suffixed with " is at index X" where X is the index of the element
  */
 
-// ...
-
+const array = ['how', 'now', 'brown', 'cow']
+const stringyIndexes = array => {
+  for (let i = 0; i < array.length; i++) {
+    array[i] = array[i] + ' is at index ' + i
+  }
+  return array
+}
 /*
  * Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
  */
 
-// ...
+const allNums = [2, 5, 7, 89, 74, 56]
+const evenNums = []
+const onlyTheEvenSurvive = allNums => {
+  for (let i = 0; i < allNums.length; i++) {
+    if (allNums[i] % 2 === 0) {
+      evenNums.push(allNums[i])
+    }
+  }
+  return evenNums
+}
 
 /*
  * Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
 
-// ...
+const onlyTheEvenIndexedSurvive = numbers => {
+  return numbers.filter((number, index) => index % 2 === 0)
+}
 
 /*
  * Define a function bestMoviesOfTheYear that accepts an array of
@@ -110,7 +137,15 @@
  * }
  */
 
-// ...
+const bestMoviesOfTheYear = (movies, year) => {
+  return movies
+    .filter(movie => movie.year === year && movie.score > 90)
+    .map(
+      movie => (movie.name = name),
+      (movie.year = year),
+      (movie.score = score)
+    )
+}
 
 /*
  * Define a function everyoneIsOdd that accepts an array of
@@ -189,7 +224,9 @@ import test from 'ava'
 
 const ensureDefined = (t, method) => {
   if (eval(`typeof ${method}`) !== 'function') {
-    t.fail(`\n\n\n\n\n⚡️⚡️⚡️⚡️⚡️ The next step is to define the function ${method} ⚡️⚡️⚡️⚡️⚡️\n\n\n`)
+    t.fail(
+      `\n\n\n\n\n⚡️⚡️⚡️⚡️⚡️ The next step is to define the function ${method} ⚡️⚡️⚡️⚡️⚡️\n\n\n`
+    )
   }
 }
 
